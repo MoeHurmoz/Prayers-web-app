@@ -1,0 +1,313 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../assets/background.jpg");
+}
+
+main {
+  margin: auto;
+}
+
+/* Fonts: */
+.largest-title-font {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.title-font {
+  font-size: calc(1.5rem + 1px);
+  font-weight: bold;
+}
+
+.secondary-font {
+  font-size: calc(1.5rem + 1px);
+  font-weight: 400;
+}
+/*----------------*/
+
+/* Loader */
+.loader {
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+  border: 2px solid #212529;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: #277efd;
+  width: 3px;
+  height: 24px;
+  transform: translateX(-50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*----------------*/
+
+/* Header: */
+#location {
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
+  margin: 0 auto;
+}
+
+#country,
+#city {
+  width: 48%;
+}
+
+#calcMethod {
+  width: 55%;
+  margin: 0 auto;
+}
+/*----------------*/
+
+/* Page Content: */
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+  position: relative;
+  bottom: 24px;
+}
+
+.p-card {
+  padding: 24px;
+}
+
+.p-card-with-icon {
+  padding: 0px 24px 24px;
+}
+
+.internal-content-of-card {
+  margin: 3vh 2vw;
+}
+
+.white-space {
+  white-space: pre-line;
+}
+
+#Date {
+  display: flex;
+}
+
+#Hijri,
+#Gregorian {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.today-mark {
+  background-color: #c1c1c1;
+}
+
+.align {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+/*----------------*/
+
+/* Footer: */
+footer {
+  background-color: #f1f1f1;
+}
+
+footer > div {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+footer > div > a {
+  text-decoration: none;
+}
+/*----------------*/
+
+/* Media Styles: */
+@media (max-width: 992px) {
+  #location,
+  #calcMethod {
+    width: 80%;
+  }
+
+  #Date {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #Hijri,
+  #Gregorian {
+    margin: 0;
+    width: 100%;
+  }
+
+  #Gregorian {
+    margin-top: 50px;
+  }
+
+  #Hijri > h2,
+  #Gregorian > h2 {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .largest-title-font {
+    font-size: calc(2rem + 3px);
+  }
+
+  .title-font,
+  .secondary-font {
+    font-size: calc(1.3rem - 0.8px);
+  }
+}
+
+@media (max-width: 525px) {
+  .largest-title-font {
+    font-size: calc(2rem + 1px);
+  }
+
+  #location,
+  #calcMethod {
+    width: 85%;
+  }
+}
+
+@media (max-width: 506px) {
+  body {
+    font-size: calc(1rem - 2px);
+  }
+
+  .largest-title-font {
+    font-size: calc(2rem - 2px);
+  }
+
+  .title-font,
+  .secondary-font {
+    font-size: calc(1.3rem - 1.8px);
+  }
+
+  #location,
+  #calcMethod {
+    width: 100%;
+  }
+}
+
+@media (max-width: 466px) {
+  body {
+    font-size: calc(1rem - 3px);
+  }
+}
+
+@media (max-width: 446px) {
+  .largest-title-font {
+    font-size: calc(2rem - 3px);
+  }
+
+  .title-font,
+  .secondary-font {
+    font-size: calc(1.3rem - 2.8px);
+  }
+
+  .p-card {
+    padding: 15px;
+  }
+
+  .p-card-with-icon {
+    padding: 0px 15px 15px;
+  }
+
+  th,
+  td {
+    padding: 4px !important;
+  }
+}
+
+@media (max-width: 372px) {
+  .largest-title-font {
+    font-size: calc(2rem - 4px);
+  }
+
+  .title-font,
+  .secondary-font {
+    font-size: calc(1.3rem - 3.8px);
+  }
+
+  .p-card {
+    padding: 14px;
+  }
+
+  .p-card-with-icon {
+    padding: 0px 14px 15px;
+  }
+
+  body {
+    font-size: calc(1rem - 4px);
+  }
+}
+
+@media (max-width: 350px) {
+  .largest-title-font {
+    font-size: calc(2rem - 5px);
+  }
+
+  .title-font,
+  .secondary-font {
+    font-size: calc(1.3rem - 4.8px);
+  }
+
+  .p-card {
+    padding: 12px;
+  }
+
+  .p-card-with-icon {
+    padding: 0px 12px 15px;
+  }
+}
+
+@media (max-width: 350px) {
+  body {
+    font-size: calc(1rem - 5px);
+  }
+
+  .p-card {
+    padding: 11px;
+  }
+
+  .p-card-with-icon {
+    padding: 0px 11px 15px;
+  }
+}
+
+@media (max-width: 325px) {
+  .p-card {
+    padding: 9px;
+  }
+
+  .p-card-with-icon {
+    padding: 0px 9px 15px;
+  }
+}
+/*----------------*/

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Prayer timings and Hijri date" />
+    <meta name="author" content="Muhannad Bahurmoz" />
+    <title>PRAYERS</title>
+    <!-- Icon-->
+    <link rel="icon" type="image/x-icon" href="../assets/mosque.png" />
+    <!-- Bootstrap icons-->
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Bootstrap core CSS-->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet" />
+    <!-- Axios Library-->
+    <script defer src="../node_modules/axios/dist/axios.min.js"></script>
+    <!-- JS File-->
+    <script defer src="../js/scripts.js"></script>
+    <!-- Bootstrap core JS-->
+    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-lg-5">
+            <a class="navbar-brand" href="index.html">PRAYERS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">PRAYER
+                            TIMINGS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="qibla.html">QIBLA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container px-lg-5">
+        <!-- Header (Region Selector)-->
+        <header class="py-5 mb-5">
+            <div class="p-card bg-light rounded-3 text-center">
+                <div class="m-4 m-lg-5">
+                    <h1 class="display-5 largest-title-font">PRAYER TIMINGS</h1>
+                    <p class="secondary-font">Select the region whose timings you want to see</p>
+
+                    <div id="location">
+                        <div id="country" class="form-floating">
+                            <select class="form-control" id="Country" name="Country">
+                                <optgroup label="Country:">
+                                    <option value="SA">Saudi Arabia (KSA)</option>
+                                    <option value="AE">Emirates (UAE)</option>
+                                    <option value="EG">Egypt (ARE)</option>
+                                    <option value="US">America (USA)</option>
+                                    <option value="CA">Canada (CAN)</option>
+                                    <option value="GB">Britain (UK)</option>
+                                </optgroup>
+                            </select>
+                            <label for="Country">COUNTRY</label>
+                        </div>
+
+                        <div id="city" class="form-floating">
+                            <select class="form-control" id="City" name="City">
+                                <optgroup id="insideCity" label="City:"> </optgroup>
+                            </select>
+                            <label for="City">CITY</label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div id="calcMethod" class="form-floating">
+                        <select class="form-control" id="Method" name="Method">
+                            <optgroup label="Calculation Method:">
+                                <option value="4">Umm Al-Qura University, Makkah</option>
+                                <option value="5">Egyptian General Authority of Survey</option>
+                                <option value="2">Islamic Society of North America</option>
+                            </optgroup>
+                        </select>
+                        <label for="Method">Calculation Method</label>
+                    </div>
+
+                    <br>
+
+                    <a onclick="continueClicked()" class="btn btn-primary btn-lg" href="#timings">Continue</a>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Date-->
+        <section class="row gx-lg-5 pt-4 mb-5">
+            <div class="mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-card-with-icon">
+
+                        <div class="card-icon bg-primary bg-gradient text-white rounded-3 mt-n4">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+
+                        <h2 class="title-font">TODAY'S DATE</h2>
+                        <hr>
+
+                        <div id="Date">
+                            <div id="Hijri"> </div>
+
+                            <div id="Gregorian"> </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <span id="timings"></span>
+        <br>
+
+        <!-- Prayer Timings-->
+        <section class="pt-4 mb-5">
+            <div class="row gx-lg-5">
+
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-card-with-icon">
+                            <div class="card-icon bg-primary bg-gradient text-white rounded-3 mt-n4">
+                                <i class="bi bi-cloud-moon"></i>
+                            </div>
+                            <h2 class="title-font">Fajr</h2>
+                            <hr>
+                            <div id="f"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-card-with-icon">
+                            <div class="card-icon bg-primary bg-gradient text-white rounded-3 mt-n4">
+                                <i class="bi bi-sunrise"></i>
+                            </div>
+                            <h2 class="title-font">Sunrise</h2>
+                            <hr>
+                            <div id="s"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-card-with-icon">
+                            <div class="card-icon bg-primary bg-gradient text-white rounded-3 mt-n4">
+                                <i class="bi bi-brightness-high"></i>
+                            </div>
+                            <h2 class="title-font">Dhuhr</h2>
+                            <hr>
+                            <div id="d"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-card-with-icon">
+                            <div class="card-icon bg-primary bg-gradient text-white rounded-3 mt-n4">
+                                <i class="bi bi-cloud-sun"></i>
+                            </div>
+                            <h2 class="title-font">Asr</h2>
+                            <hr>
+                            <div id="a"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-card-with-icon">
+                            <div class="card-icon bg-primary bg-gradient text-white rounded-3 mt-n4">
+                                <i class="bi bi-sunset"></i>
+                            </div>
+                            <h2 class="title-font">Maghrib</h2>
+                            <hr>
+                            <div id="m"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-card-with-icon">
+                            <div class="card-icon bg-primary bg-gradient text-white rounded-3 mt-n4">
+                                <i class="bi bi-moon-stars"></i>
+                            </div>
+                            <h2 class="title-font">Isha'a</h2>
+                            <hr>
+                            <div id="i"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DAYS OF MONTH TABLE-->
+        <section class="pt-4 mb-5">
+            <div class="row gx-lg-5">
+                <div class="mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-card-with-icon">
+
+                            <div class="card-icon bg-primary bg-gradient text-white rounded-3 mt-n4">
+                                <i class="bi bi-clock"></i>
+                            </div>
+
+                            <h2 class="title-font">DAYS OF MONTH</h2>
+                            <hr>
+
+                            <table id="month-table" class="table table-hover table-striped white-space"> </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer-->
+    <footer class="pt-4">
+        <div class="text-center text-dark p-3">
+            © <span id="Copyright"></span>:
+            <a class="text-dark" href="https://www.linkedin.com/in/muhannad-abdulaziz/">
+                Developer <i class="bi bi-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
