@@ -7,7 +7,7 @@ function dataCity() {
   let insideCity = document.getElementById("insideCity");
   switch (countryValue) {
     case "SA":
-      insideCity.innerHTML = `<option value="Makkah">Makkah</option> <option value="Medina">Medina</option> <option value="Riyadh">Riyadh</option> <option value="Jeddah">Jeddah</option> <option value="Abha">Abha</option> <option value="Dammam">Dammam</option> <option value="Jubail">Jubail</option>`;
+      insideCity.innerHTML = `<option value="Mecca">Mecca</option> <option value="Medina">Medina</option> <option value="Riyadh">Riyadh</option> <option value="Jeddah">Jeddah</option> <option value="Abha">Abha</option> <option value="Dammam">Dammam</option> <option value="Jubail">Jubail</option>`;
       break;
     case "AE":
       insideCity.innerHTML = `<option value="Abu Dhabi">Abu Dhabi</option> <option value="Dubai">Dubai</option> <option value="Sharjah">Sharjah</option> <option value="Al Ain">Al Ain</option>`;
@@ -49,7 +49,7 @@ function loader(elementID = "") {
 }
 
 // GET DATA AND HANDLING:
-function getDataFromAPI(country = "SA", city = "Makkah", method = 4) {
+function getDataFromAPI(country = "SA", city = "Mecca", method = 4) {
   // HANDLING WITH LOADER:
   loader("Hijri");
   loader("Gregorian");
