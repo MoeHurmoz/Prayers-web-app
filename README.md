@@ -1,19 +1,24 @@
 # Prayers
 
-Prayers is a simple application to display prayer timings, I built it on the client side, and on the server side I relied on the API.
+Prayers is a simple application to display prayer timings. It is built on the client side and relies on an API for the server side.
 
 ## Features
 
-- Today's date, Hijri and Gregorian
-- Today's prayer timings
-- Prayer timings for all days of the month
-- Possibility to change the city or region
-- Responsive to all phone and computer screen sizes
+- Display today's date in both Hijri and Gregorian calendars
+- Show today's prayer timings
+- Provide prayer timings for all days of the month
+- Allow users to change the city or region
+- Fully responsive design for all phone and computer screen sizes
 
 ## Tech Stack
 
-HTML5, CSS3, Bootstrap, Bootstrap-Icons, JavaScript, Axios
+- HTML5
+- CSS3
+- Bootstrap
+- Bootstrap Icons
+- JavaScript
+- Axios
 
-## Live Server
+## Live Demo Server
 
-https://prayers-moehurmoz-project.netlify.app/views
+You can preview the application at the following link: https://prayers-moehurmoz-project.netlify.app/views
