@@ -1,6 +1,6 @@
 # Overview
 
-This repository contains the source code for a web application designed for Prayers,
+This repository contains the source code for a web application designed for Prayers,<br/>
 Prayers is a simple application to display prayer timings. It's built on the client side, utilizing an API for the server side.
 
 ## Features
