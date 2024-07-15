@@ -1,6 +1,7 @@
-# Prayers
+# Overview
 
-Prayers is a simple application to display prayer timings. It is built on the client side and relies on an API for the server side.
+This repository contains the source code for a web application designed for Prayers,
+Prayers is a simple application to display prayer timings. It's built on the client side, utilizing an API for the server side.
 
 ## Features
 
