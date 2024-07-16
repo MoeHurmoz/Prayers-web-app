@@ -4,7 +4,7 @@
 
 This repository contains the source code for a web application designed for displaying prayer timings and dates.
 
-Prayers is a simple application that displays prayer timings and today's date in both Hijri and Gregorian calendars. It's built on the client side, utilizing an API for the server side.
+Prayers is a simple web application that displays prayer timings and today's date in both Hijri and Gregorian calendars. It's built on the client side, utilizing an API for the server side.
 
 ## Features
 
