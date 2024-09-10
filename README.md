@@ -20,7 +20,7 @@ Prayers is a simple web application that displays prayer timings and today's dat
 - **CSS3**
 - **Bootstrap**
 - **Bootstrap Icons**
-- **JavaScript**
+- **TypeScript**
 - **Axios**
 
 ## Live Demo Server
